@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<scratch>
+    <block-chain>
+        <pos>
+            <x>0</x>
+            <y>0</y>
+        </pos>
+        <block-list>
+            <block>
+                <name>if</name>
+                <code>
+                    <block>
+                        <name>move</name>
+                    </block>
+                    <block>
+                        <name>move</name>
+                    </block>
+                </code>
+            </block>
+        </block-list>
+    </block-chain>
+</scratch>
