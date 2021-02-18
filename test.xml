@@ -2,18 +2,24 @@
 <scratch>
     <block-chain>
         <pos>
-            <x>0</x>
-            <y>0</y>
+            <x>691</x>
+            <y>365</y>
         </pos>
         <block-list>
             <block>
-                <name>if</name>
+                <name>IfBlock</name>
                 <code>
                     <block>
-                        <name>move</name>
+                        <name>MoveBlock</name>
                     </block>
+                </code>
+            </block>
+            <block>
+                <name>ElseBlock</name>
+                <code>
                     <block>
-                        <name>move</name>
+                        <name>IfBlock</name>
+                        <code/>
                     </block>
                 </code>
             </block>

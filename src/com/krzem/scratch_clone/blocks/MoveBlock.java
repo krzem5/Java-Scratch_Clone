@@ -1,4 +1,9 @@
-import com.krzem.scratch_clone.*;
+package com.krzem.scratch_clone.blocks;
+
+
+
+import com.krzem.scratch_clone.Block;
+import com.krzem.scratch_clone.Graphics;
 
 
 

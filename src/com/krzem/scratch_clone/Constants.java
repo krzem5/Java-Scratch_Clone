@@ -28,9 +28,8 @@ public class Constants{
 	public static final Color EDITOR_BORDER_COLOR=new Color(0,115,200);
 	public static final int EDITOR_BORDER_SIZE=20;
 
-	public static final String ASSETS_PATH="./com/krzem/scratch_clone/assets/";
-	public static final String BLOCK_CLASS_PATH="./com/krzem/scratch_clone/blocks";
-	public static final String LOG_PATH="./com/krzem/scratch_clone/log";
+	public static final String ASSETS_PATH="rsrc/";
+	public static final String LOG_PATH="logs";
 
 	public static final String BLOCK_GROUP_TEX_PATH="group/";
 	public static final String FONT_TEX_PATH="font/";

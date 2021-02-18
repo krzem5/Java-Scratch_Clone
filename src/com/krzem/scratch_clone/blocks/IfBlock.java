@@ -1,4 +1,10 @@
-import com.krzem.scratch_clone.*;
+package com.krzem.scratch_clone.blocks;
+
+
+
+import com.krzem.scratch_clone.CodeBlock;
+import com.krzem.scratch_clone.Graphics;
+import com.krzem.scratch_clone.OutputConnectorList;
 
 
 
