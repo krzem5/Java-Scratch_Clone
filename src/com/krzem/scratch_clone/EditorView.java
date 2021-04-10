@@ -13,7 +13,7 @@ import java.util.List;
 
 public class EditorView extends Constants{
 	public Main cls;
-	public Rectangle BORDER=new Rectangle(100,100,WINDOW_SIZE.width-200,WINDOW_SIZE.height-200);/////////////////////////////////////////////////////
+	public Rectangle BORDER=new Rectangle(100,100,WINDOW_SIZE.width-200,WINDOW_SIZE.height-200)
 	public Rectangle INNER_BORDER;
 	public List<List<Block>> BLOCKS;
 	public VScrollBar VSB;
@@ -437,7 +437,7 @@ public class EditorView extends Constants{
 				g.fillRect(r.x-this.INNER_BORDER.x,r.y-this.INNER_BORDER.y,r.w,r.h);
 			}
 			else{
-				sh.setRGB(r.x-this.INNER_BORDER.x,r.y-this.INNER_BORDER.y,255<<24+255<<16);
+				sh.setRGB(r.x-this.INNER_BORDER.x,r.y-this.INNER_BORDER.y,(255<<24)+(255<<16));
 			}
 		}
 		return sh;

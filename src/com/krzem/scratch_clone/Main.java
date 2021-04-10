@@ -92,6 +92,7 @@ public class Main extends Constants{
 		this.frame.setUndecorated(true);
 		this.frame.setResizable(false);
 		this.frame.addWindowListener(new WindowAdapter(){
+			@Override
 			public void windowClosing(WindowEvent e){
 				cls.quit();
 			}
@@ -102,16 +103,19 @@ public class Main extends Constants{
 		this.canvas.setSize(WINDOW_SIZE.width,WINDOW_SIZE.height);
 		this.canvas.setPreferredSize(new Dimension(WINDOW_SIZE.width,WINDOW_SIZE.height));
 		this.canvas.addMouseListener(new MouseAdapter(){
+			@Override
 			public void mousePressed(MouseEvent e){
 				cls._mouse=1;
 				cls._mouseC=e.getClickCount();
 				cls._mouseB=e.getButton();
 			}
+			@Override
 			public void mouseReleased(MouseEvent e){
 				cls._mouse=2;
 				cls._mouseC=e.getClickCount();
 				cls._mouseB=e.getButton();
 			}
+			@Override
 			public void mouseClicked(MouseEvent e){
 				cls._mouse=3;
 				cls._mouseC=e.getClickCount();
@@ -119,14 +123,17 @@ public class Main extends Constants{
 			}
 		});
 		this.canvas.addMouseMotionListener(new MouseMotionAdapter(){
+			@Override
 			public void mouseMoved(MouseEvent e){
 				cls._mouseM=e;
 			}
+			@Override
 			public void mouseDragged(MouseEvent e){
 				cls._mouseM=e;
 			}
 		});
 		this.canvas.addMouseWheelListener(new MouseWheelListener(){
+			@Override
 			public void mouseWheelMoved(MouseWheelEvent e){
 				if (e.getWheelRotation()<0){
 					cls._sc=1;
@@ -137,18 +144,21 @@ public class Main extends Constants{
 			}
 		});
 		this.canvas.addKeyListener(new KeyListener(){
+			@Override
 			public void keyPressed(KeyEvent e){
 				if (cls.KEYBOARD==null){
 					return;
 				}
 				cls.KEYBOARD.down(e);
 			}
+			@Override
 			public void keyReleased(KeyEvent e){
 				if (cls.KEYBOARD==null){
 					return;
 				}
 				cls.KEYBOARD.up(e);
 			}
+			@Override
 			public void keyTyped(KeyEvent e){
 				if (cls.KEYBOARD==null){
 					return;
@@ -169,7 +179,7 @@ public class Main extends Constants{
 			@Override
 			public void run(){
 				while (cls._break==false){
-					Long s=System.currentTimeMillis();
+					long s=System.currentTimeMillis();
 					try{
 						cls._update_events();
 						cls.update();
@@ -178,7 +188,7 @@ public class Main extends Constants{
 					catch (Exception e){
 						IO.dump_error(e);
 					}
-					Long d=System.currentTimeMillis()-s;
+					long d=System.currentTimeMillis()-s;
 					if (d==0){
 						d=1L;
 					}

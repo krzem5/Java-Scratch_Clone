@@ -23,6 +23,7 @@ public class Canvas extends JComponent{
 
 
 
+	@Override
 	public void paintComponent(java.awt.Graphics _g){
 		try{
 			Graphics g=new Graphics(this.cls,(Graphics2D)_g.create());
@@ -36,6 +37,7 @@ public class Canvas extends JComponent{
 
 
 
+	@Override
 	public void addNotify(){
 		super.addNotify();
 		this.requestFocus();

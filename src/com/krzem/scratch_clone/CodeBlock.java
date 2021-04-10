@@ -34,12 +34,14 @@ public class CodeBlock extends Block{
 
 
 
+	@Override
 	public Vector get_size(){
 		return new Vector(BLOCK_CONTROL_DEFAULT_WIDTH,BLOCK_CONTROL_DEFAULT_HEIGHT);
 	}
 
 
 
+	@Override
 	public void _init(Main cls,EditorView ev,String nm,boolean p){
 		super._init(cls,ev,nm,p);
 		this.size=new Vector(BLOCK_CONTROL_DEFAULT_WIDTH,BLOCK_CONTROL_DEFAULT_HEIGHT);
@@ -50,6 +52,7 @@ public class CodeBlock extends Block{
 
 
 
+	@Override
 	public void _update(){
 		super._update();
 		if (this._panel==false){
@@ -65,6 +68,7 @@ public class CodeBlock extends Block{
 
 
 
+	@Override
 	public void _draw(Graphics g){
 		if (this.ev._is_dragging(this)||(this._panel==true&&this.drag==true)){
 			g.drawImage(this.topLA,this.pos.x,this.pos.y,this.topLA.getWidth(),this.topLA.getHeight());
@@ -102,6 +106,7 @@ public class CodeBlock extends Block{
 
 
 
+	@Override
 	public ArrayList<Rectangle> _get_shadow(Vector v){
 		ArrayList<Rectangle> sl=new ArrayList<Rectangle>();
 		sl.addAll(this.Tconn._get_shadow(v.x+CONNECTOR_CODE_BLOCK_INNER_OFFSET,v.y));
@@ -121,6 +126,7 @@ public class CodeBlock extends Block{
 
 
 
+	@Override
 	public boolean _contains(Vector v){
 		return ((this.pos.x<=v.x&&v.x<=this.pos.x+this.size.x&&this.pos.y<=v.y&&v.y<=this.pos.y+this.topL.getHeight())||(this.pos.x<=v.x&&v.x<=this.pos.x+this.size.x&&this.pos.y+this.size.y-this.bottomM.getHeight()<=v.y&&v.y<=this.pos.y+this.size.y)||(this.pos.x<=v.x&&v.x<=this.side.getWidth()&&this.pos.y<=v.y&&v.y<=this.pos.y+this.size.y));
 	}
@@ -138,6 +144,7 @@ public class CodeBlock extends Block{
 
 
 
+	@Override
 	public boolean _inner_box_contains(Vector v,Block bl){
 		if (this.pos.x<=v.x&&v.x<=this.pos.x+this.size.x&&this.pos.y+this.topM.getHeight()/2<=v.y&&v.y<=this.pos.y+this.size.y-this.bottomM.getHeight()/2){
 			if (this.pos.y+this.topM.getHeight()/2<=v.y&&v.y<=this.pos.y+this.topM.getHeight()&&!this.cTop.can_connect(bl.Tconn)){
@@ -166,6 +173,7 @@ public class CodeBlock extends Block{
 
 
 
+	@Override
 	public void _temp_expand_size(List<Block> bl,int i){
 		this.temp_code=bl;
 		this.temp_code_pos=i;
@@ -174,6 +182,7 @@ public class CodeBlock extends Block{
 
 
 
+	@Override
 	public void _update_pos(){
 		int x=this.pos.x+this.side.getWidth();
 		int y=this.pos.y+this.topM.getHeight();
@@ -205,6 +214,7 @@ public class CodeBlock extends Block{
 
 
 
+	@Override
 	public int _get_drag_insert_pos(Vector v){
 		if (this.pos.x<=v.x&&v.x<=this.pos.x+this.size.x&&this.pos.y+this.topM.getHeight()/2<=v.y&&v.y<=this.pos.y+this.topM.getHeight()){
 			return 0;

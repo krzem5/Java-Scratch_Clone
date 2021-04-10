@@ -15,6 +15,7 @@ public class Vector{
 
 
 
+	@Override
 	public Vector clone(){
 		return new Vector(this.x,this.y);
 	}

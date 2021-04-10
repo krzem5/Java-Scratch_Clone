@@ -55,6 +55,7 @@ public class Graphics{
 
 
 
+	@Override
 	public Graphics clone(){
 		Graphics ng=new Graphics(this.cls,(Graphics2D)this.g.create());
 		ng._set_base_offset(this._off.x,this._off.y);

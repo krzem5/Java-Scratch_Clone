@@ -322,13 +322,13 @@ public class Block extends Constants{
 				if (igl.contains(b)){
 					continue;
 				}
-				if (i>0&&b.code!=null&&b.pos.x<=this.cls.MOUSE_POS.add(this.ev.HSB.get(),this.ev.VSB.get()).x&&this.cls.MOUSE_POS.add(this.ev.HSB.get(),this.ev.VSB.get()).x<b.pos.x+b.size.x&&b.pos.y<=this.cls.MOUSE_POS.add(this.ev.HSB.get(),this.ev.VSB.get()).y&&this.cls.MOUSE_POS.add(this.ev.HSB.get(),this.ev.VSB.get()).y<=b.pos.y+b.topM.getHeight()/2&&(i==0||(i>0&&bl.get(i-1).Bconn.can_connect(this.Tconn)))){
+				if (i>0&&b.code!=null&&b.pos.x<=this.cls.MOUSE_POS.add(this.ev.HSB.get(),this.ev.VSB.get()).x&&this.cls.MOUSE_POS.add(this.ev.HSB.get(),this.ev.VSB.get()).x<b.pos.x+b.size.x&&b.pos.y<=this.cls.MOUSE_POS.add(this.ev.HSB.get(),this.ev.VSB.get()).y&&this.cls.MOUSE_POS.add(this.ev.HSB.get(),this.ev.VSB.get()).y<=b.pos.y+b.topM.getHeight()/2&&bl.get(i-1).Bconn.can_connect(this.Tconn)){
 					return b;
 				}
 				if (b.code!=null&&b.pos.x<=this.cls.MOUSE_POS.add(this.ev.HSB.get(),this.ev.VSB.get()).x&&this.cls.MOUSE_POS.add(this.ev.HSB.get(),this.ev.VSB.get()).x<b.pos.x+b.size.x&&b.pos.y+b.size.y-b.bottomM.getHeight()/2<=this.cls.MOUSE_POS.add(this.ev.HSB.get(),this.ev.VSB.get()).y&&this.cls.MOUSE_POS.add(this.ev.HSB.get(),this.ev.VSB.get()).y<=b.pos.y+b.size.y&&b.Bconn.can_connect(this.Tconn)){
 					return b;
 				}
-				if (i>0&&b.code==null&&b.pos.x<=this.cls.MOUSE_POS.add(this.ev.HSB.get(),this.ev.VSB.get()).x&&this.cls.MOUSE_POS.add(this.ev.HSB.get(),this.ev.VSB.get()).x<b.pos.x+b.size.x&&b.pos.y<=this.cls.MOUSE_POS.add(this.ev.HSB.get(),this.ev.VSB.get()).y&&this.cls.MOUSE_POS.add(this.ev.HSB.get(),this.ev.VSB.get()).y<=b.pos.y+b.M.getHeight()/2&&(i==0||(i>0&&bl.get(i-1).Bconn.can_connect(this.Tconn)))){
+				if (i>0&&b.code==null&&b.pos.x<=this.cls.MOUSE_POS.add(this.ev.HSB.get(),this.ev.VSB.get()).x&&this.cls.MOUSE_POS.add(this.ev.HSB.get(),this.ev.VSB.get()).x<b.pos.x+b.size.x&&b.pos.y<=this.cls.MOUSE_POS.add(this.ev.HSB.get(),this.ev.VSB.get()).y&&this.cls.MOUSE_POS.add(this.ev.HSB.get(),this.ev.VSB.get()).y<=b.pos.y+b.M.getHeight()/2&&bl.get(i-1).Bconn.can_connect(this.Tconn)){
 					return b;
 				}
 				if (b.code==null&&b.pos.x<=this.cls.MOUSE_POS.add(this.ev.HSB.get(),this.ev.VSB.get()).x&&this.cls.MOUSE_POS.add(this.ev.HSB.get(),this.ev.VSB.get()).x<b.pos.x+b.size.x&&b.pos.y+b.M.getHeight()/2<=this.cls.MOUSE_POS.add(this.ev.HSB.get(),this.ev.VSB.get()).y&&this.cls.MOUSE_POS.add(this.ev.HSB.get(),this.ev.VSB.get()).y<=b.pos.y+b.size.y&&b.Bconn.can_connect(this.Tconn)){
