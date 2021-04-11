@@ -30,6 +30,7 @@ public class IO extends Constants{
 	public static boolean _err=false;
 
 
+
 	public static void _close(){
 		if (IO._wr==null){
 			return;
@@ -78,6 +79,9 @@ public class IO extends Constants{
 
 
 	public static void save_to_file(EditorView ev,String fp){
+		if (IO.fp.length()==0){
+			IO.fp="autosave-"+new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date())+".xml";
+		}
 		if (fp.length()==0){
 			fp=IO.fp+"";
 		}

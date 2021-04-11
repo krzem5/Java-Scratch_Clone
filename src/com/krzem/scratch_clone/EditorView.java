@@ -437,7 +437,7 @@ public class EditorView extends Constants{
 				g.fillRect(r.x-this.INNER_BORDER.x,r.y-this.INNER_BORDER.y,r.w,r.h);
 			}
 			else{
-				sh.setRGB(r.x-this.INNER_BORDER.x,r.y-this.INNER_BORDER.y,(255<<24)+(255<<16));
+				sh.setRGB(r.x-this.INNER_BORDER.x,r.y-this.INNER_BORDER.y,0);
 			}
 		}
 		return sh;
