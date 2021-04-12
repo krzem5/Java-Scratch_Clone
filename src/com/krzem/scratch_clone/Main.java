@@ -52,7 +52,7 @@ public class Main extends Constants{
 
 
 	public Main(String[] args){
-		Long st=System.nanoTime();
+		long st=System.nanoTime();
 		IO.dump_log("Starting Scratch...");
 		this.init();
 		if (args.length==1){
@@ -62,8 +62,7 @@ public class Main extends Constants{
 		}
 		this.frame_init();
 		this.run();
-		Long diff=System.nanoTime()-st;
-		IO.dump_log(String.format("Loaded in %fs",diff/10e8d));
+		IO.dump_log(String.format("Loaded in %fs",(System.nanoTime()-st)/10e8d));
 	}
 
 
