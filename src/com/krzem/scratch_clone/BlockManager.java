@@ -45,6 +45,7 @@ public class BlockManager extends Constants{
 
 	public void load(){
 		this._register_block(com.krzem.scratch_clone.blocks.ElseBlock.class);
+		this._register_block(com.krzem.scratch_clone.blocks.ElseIfBlock.class);
 		this._register_block(com.krzem.scratch_clone.blocks.IfBlock.class);
 		this._register_block(com.krzem.scratch_clone.blocks.MoveBlock.class);
 	}
