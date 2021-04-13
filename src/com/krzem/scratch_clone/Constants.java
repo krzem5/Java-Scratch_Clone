@@ -28,7 +28,7 @@ public class Constants{
 	public static final Color EDITOR_BORDER_COLOR=new Color(0,115,200);
 	public static final int EDITOR_BORDER_SIZE=20;
 
-	public static final String ASSETS_PATH="rsrc/";
+	public static final String ASSETS_PATH="/rsrc/";
 	public static final String LOG_PATH="logs";
 
 	public static final String BLOCK_GROUP_TEX_PATH="group/";
@@ -36,7 +36,7 @@ public class Constants{
 	public static final String BLOCK_TEX_PATH="block/";
 	public static final String CONNECTOR_TEX_PATH="connector/";
 
-	public static final String FONT_CHARS=" .0123456789abcdefghijklmnopqrstuvwxyz";
+	public static final String FONT_CHARS="0123456789abcdefghijklmnopqrstuvwxyz. ";
 	public static final String FONT_UNKNOWN_CHAR="?";
 	public static final String FONT_UNKNOWN_CHAR_NAME="unknown";
 	public static final String FONT_SPACE_CHAR=" ";

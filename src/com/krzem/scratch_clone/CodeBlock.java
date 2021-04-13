@@ -43,11 +43,20 @@ public class CodeBlock extends Block{
 
 	@Override
 	public void _init(Main cls,EditorView ev,String nm,boolean p){
-		super._init(cls,ev,nm,p);
+		this.cls=cls;
+		this.ev=ev;
+		this.pos=new Vector(0,0);
+		this.nm=nm;
+		this._panel=p;
+		this.d_off=new Vector(0,0);
 		this.size=new Vector(BLOCK_CONTROL_DEFAULT_WIDTH,BLOCK_CONTROL_DEFAULT_HEIGHT);
+		this.parent=null;
+		this.Tconn=new InputConnectorList(this.cls,this,"code");
+		this.Bconn=new OutputConnectorList(this.cls,this,"code");
 		this.code=new ArrayList<Block>();
 		this.cTop=new OutputConnectorList(this.cls,this,"code");
 		this._load();
+		this.init();
 	}
 
 

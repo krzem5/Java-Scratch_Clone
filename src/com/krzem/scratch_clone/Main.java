@@ -72,8 +72,6 @@ public class Main extends Constants{
 		this.KEYBOARD=new Keyboard(this);
 		IO.dump_log("Creating Image Loader...");
 		this.IMAGE_LOADER=new ImageLoader(this);
-		IO.dump_log("Loading Images...");
-		this.IMAGE_LOADER.load(ASSETS_PATH);
 		IO.dump_log("Creating Font Rednerer...");
 		this.FONT=new Font(this);
 		IO.dump_log("Creating Block Manager...");
@@ -83,6 +81,9 @@ public class Main extends Constants{
 		IO.dump_log("Creating Editor...");
 		this.ev=new EditorView(this);
 	}
+
+
+
 	public void frame_init(){
 		Main cls=this;
 		IO.dump_log("Creating JFrame...");
@@ -195,7 +196,9 @@ public class Main extends Constants{
 						try{
 							Thread.sleep((long)(1/(double)cls.MAX_FPS*1e3)-d);
 						}
-						catch (InterruptedException e){}
+						catch (InterruptedException e){
+
+						}
 					}
 					cls.FPS=(double)Math.floor(1/(double)(System.currentTimeMillis()-s)*1e8)/1e5;
 				}

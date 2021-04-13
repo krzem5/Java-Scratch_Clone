@@ -5,6 +5,7 @@ package com.krzem.scratch_clone;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.InputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,37 +26,24 @@ public class ImageLoader extends Constants{
 
 
 
-	public void load(String d){
-		this._load(d,"");
-	}
-
-
-
 	public BufferedImage get(String n){
-		return this.imgl.get(n);
-	}
-
-
-
-	private void _load(String d,String p){
-		for (File f:new File(d).listFiles()){
+		BufferedImage o=this.imgl.get(n);
+		if (o==null){
 			try{
-				if (f.getName().endsWith(".png")){
-					BufferedImage bi=(BufferedImage)ImageIO.read(f);
-					BufferedImage i=SCREEN.getConfigurations()[0].createCompatibleImage(bi.getWidth(),bi.getHeight(),bi.getTransparency());
-					Graphics ig=i.createGraphics();
-					ig.drawImage(bi,0,0,null);
-					ig.dispose();
-					this.imgl.put(p+f.getName(),i);
-					IO.dump_log("Loaded Image: "+p+f.getName());
-				}
-				else if (f.getName().indexOf(".")==-1){
-					this._load(d+"\\"+f.getName(),p+f.getName()+"/");
-				}
+				InputStream is=ImageLoader.class.getResourceAsStream(ASSETS_PATH+n);
+				BufferedImage bi=(BufferedImage)ImageIO.read(is);
+				is.close();
+				o=SCREEN.getConfigurations()[0].createCompatibleImage(bi.getWidth(),bi.getHeight(),bi.getTransparency());
+				Graphics ig=o.createGraphics();
+				ig.drawImage(bi,0,0,null);
+				ig.dispose();
+				this.imgl.put(n,o);
+				IO.dump_log("Loaded Image: "+n);
 			}
 			catch (IOException e){
 				IO.dump_error(e);
 			}
 		}
+		return o;
 	}
 }

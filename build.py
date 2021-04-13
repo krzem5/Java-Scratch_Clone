@@ -29,9 +29,16 @@ with zipfile.ZipFile("build/scratch_clone.jar","w") as zf:
 	print("Writing: META-INF/MANIFEST.MF")
 	zf.write("manifest.mf",arcname="META-INF/MANIFEST.MF")
 	for r,_,fl in os.walk("build"):
+		r=r.replace("\\","/").strip("/")+"/"
 		for f in fl:
 			if (f[-6:]==".class"):
-				print(f"Writing: {os.path.join(r,f)[6:].replace(chr(92),'/')}")
-				zf.write(os.path.join(r,f),os.path.join(r,f)[6:])
+				print(f"Writing: {(r+f)[6:]}")
+				zf.write(r+f,(r+f)[6:])
+	for r,_,fl in os.walk("rsrc"):
+		r=r.replace("\\","/").strip("/")+"/"
+		for f in fl:
+			if (f[-4:]==".png"):
+				print(f"Writing: {r+f}")
+				zf.write(r+f,r+f)
 if ("--run" in sys.argv):
 	subprocess.run(["java","-jar","build/scratch_clone.jar","test.xml"])
