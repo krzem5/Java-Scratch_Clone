@@ -76,6 +76,7 @@ public class Graphics{
 	}
 
 
+
 	public void fillRect(int x,int y,int w,int h){
 		this.g.fillRect(x-this._off.x,y-this._off.y,w,h);
 	}
